@@ -1,0 +1,82 @@
+.unit-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: rgba(13, 22, 36, 0.6); /* Matches the original dark-blue tint */
+  border: 1px solid rgba(30, 41, 59, 0.5);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: border-color 0.2s ease;
+}
+
+.unit-card:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.unit-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.unit-icon-box {
+  padding: 8px;
+  background: #1e293b;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.unit-icon-square {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #64748b;
+  border-radius: 2px;
+}
+
+.unit-code {
+  font-size: 12px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.unit-type {
+  font-size: 10px;
+  color: #64748b;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.unit-status-box {
+  text-align: right;
+}
+
+.unit-status {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.status-enroute {
+  color: #22c55e; /* Exact neon green */
+}
+
+.status-dispatched {
+  color: #eab308; /* Exact neon yellow */
+}
+
+.unit-eta {
+  font-size: 10px;
+  color: #64748b;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.title-icon {
+  display: inline-block;
+  transform: rotate(45deg);
+  margin-right: 8px;
+  color: #3b82f6;
+}

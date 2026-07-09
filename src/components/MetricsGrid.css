@@ -1,0 +1,249 @@
+.card-title-absolute {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 10px;
+  font-weight: 800;
+  color: #64748b;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* Confidence Gauge */
+.confidence-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+
+.confidence-gauge {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  margin-top: 20px;
+}
+
+.gauge-svg {
+  transform: rotate(-90deg);
+}
+
+.gauge-bg {
+  fill: none;
+  stroke: #111827;
+  stroke-width: 8;
+}
+
+.gauge-path {
+  fill: none;
+  stroke: #3b82f6;
+  stroke-width: 8;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 8px #3b82f6);
+}
+
+.gauge-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.gauge-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.gauge-label {
+  font-size: 9px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* Incident Breakdown */
+.breakdown-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.donut-chart {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 8px solid #a855f7;
+  border-top-color: #3b82f6;
+  border-left-color: #f43f5e;
+  border-right-color: #eab308;
+}
+
+.breakdown-legend {
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot { width: 8px; height: 8px; border-radius: 50%; }
+.dot.medical { background: #3b82f6; }
+.dot.fire { background: #f43f5e; }
+.dot.crime { background: #a855f7; }
+.dot.other { background: #eab308; }
+
+/* Area Charts (Risk & Sentiment) */
+.metric-area-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.metric-value {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.area-chart-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+}
+
+.area-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Purple (Risk) Gradient */
+.text-purple .metric-value, .text-purple .chart-line { color: #a855f7; stroke: #a855f7; }
+.text-purple .grad-stop-top { stop-color: #a855f7; stop-opacity: 0.3; }
+.text-purple .grad-stop-bottom { stop-color: #a855f7; stop-opacity: 0; }
+
+/* Pink (Sentiment) Gradient */
+.text-pink .metric-value, .text-pink .chart-line { color: #ec4899; stroke: #ec4899; }
+.text-pink .grad-stop-top { stop-color: #ec4899; stop-opacity: 0.3; }
+.text-pink .grad-stop-bottom { stop-color: #ec4899; stop-opacity: 0; }
+
+/* General Card Titles */
+.card-title-absolute {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 10px;
+  font-weight: 800;
+  color: #64748b;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* Pie Chart / Breakdown Section */
+.breakdown-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.donut-visual {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  position: relative;
+  /* 35% Blue, 25% Red (60%), 28% Purple (88%), 12% Yellow (100%) */
+  background: conic-gradient(
+    #3b82f6 0% 35%,
+    #f43f5e 35% 60%,
+    #a855f7 60% 88%,
+    #eab308 88% 100%
+  );
+}
+
+.donut-inner-hole {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: #0a121e; /* Matches card background */
+  border-radius: 50%;
+}
+
+.breakdown-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  gap: 8px;
+}
+
+.legend-label { color: #94a3b8; min-width: 50px; }
+.legend-percent { color: #f8fafc; font-weight: bold; }
+
+.dot { width: 8px; height: 8px; border-radius: 50%; }
+.dot.medical { background: #3b82f6; }
+.dot.fire { background: #f43f5e; }
+.dot.crime { background: #a855f7; }
+.dot.other { background: #eab308; }
+
+/* Area Graph / Risk Section */
+.metric-area-card {
+  min-height: 140px;
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-header {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+}
+
+.metric-value {
+  font-size: 20px;
+  font-weight: bold;
+  color: #facc15; /* Yellow text for 63% as per design */
+}
+
+.area-chart-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+}
+
+.area-svg { width: 100%; height: 100%; }
+
+/* Purple (Risk) Styling */
+.text-purple .chart-line-stroke { stroke: #a855f7; filter: drop-shadow(0 0 5px #a855f7); }
+.text-purple .grad-stop-top { stop-color: #a855f7; stop-opacity: 0.4; }
+.text-purple .grad-stop-bottom { stop-color: #a855f7; stop-opacity: 0; }
+
+/* Pink (Sentiment) Styling */
+.text-pink .chart-line-stroke { stroke: #ec4899; filter: drop-shadow(0 0 5px #ec4899); }
+.text-pink .grad-stop-top { stop-color: #ec4899; stop-opacity: 0.4; }
+.text-pink .grad-stop-bottom { stop-color: #ec4899; stop-opacity: 0; }

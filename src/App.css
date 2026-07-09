@@ -1,0 +1,133 @@
+/* Root dashboard */
+.dashboard-root {
+  width: 100%;
+  min-height: 100vh;
+  background: #02040a; 
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: #fff;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+.glow-header {
+  height: 70px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  background: rgba(5, 7, 15, 0.95);
+  border-bottom: 2px solid rgba(0, 242, 255, 0.5);
+  box-shadow: 0 5px 30px rgba(0, 242, 255, 0.3);
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+}
+
+/* Main Dashboard Grid - Locked Alignment */
+.dashboard-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr; 
+  grid-template-areas: 
+    "call metrics confidence"
+    "call assessment breakdown"
+    "dispatch dispatch actions";
+  gap: 25px;
+  padding: 30px;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+/* Grid Area Assignments */
+.livecall-column { grid-area: call; }
+.risk-card { grid-area: metrics; }
+.sentiment-card { grid-area: assessment; }
+.confidence-card { grid-area: confidence; }
+.breakdown-card { grid-area: breakdown; }
+.dispatch-panel { grid-area: dispatch; }
+.actions-panel { grid-area: actions; }
+
+/* Enhanced Glass Card with Intense Neon Border */
+.glow-card {
+  background: rgba(15, 18, 35, 0.7);
+  border-radius: 20px;
+  padding: 24px;
+  backdrop-filter: blur(15px);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Risk Score Specific Styles */
+.risk-status {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px currentColor;
+  margin-top: 5px;
+}
+.status-high { color: #ff3366; }
+.status-medium { color: #ffcc00; }
+.status-low { color: #00ffcc; }
+
+.risk-graph-container {
+  margin-top: 15px;
+  width: 100%;
+  border-bottom: 1px solid rgba(188, 19, 254, 0.2);
+}
+
+.graph-line-path {
+  filter: drop-shadow(0 0 8px #bc13fe);
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: drawLine 2.5s ease-out forwards;
+}
+
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Specific Aesthetic Glows */
+.glow-cyan {
+  border-color: #00f2ff;
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.2), inset 0 0 15px rgba(0, 242, 255, 0.1);
+  filter: drop-shadow(0 0 5px rgba(0, 242, 255, 0.4));
+}
+
+.glow-purple {
+  border-color: #bc13fe;
+  box-shadow: 0 0 20px rgba(188, 19, 254, 0.2), inset 0 0 15px rgba(188, 19, 254, 0.1);
+  filter: drop-shadow(0 0 5px rgba(188, 19, 254, 0.4));
+}
+
+.glow-pink {
+  border-color: #ff007c;
+  box-shadow: 0 0 20px rgba(255, 0, 124, 0.2), inset 0 0 15px rgba(255, 0, 124, 0.1);
+  filter: drop-shadow(0 0 5px rgba(255, 0, 124, 0.4));
+}
+
+/* Content Details */
+.card-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.assessment-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.assessment-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.status-positive { color: #00ffcc; text-shadow: 0 0 5px #00ffcc; }

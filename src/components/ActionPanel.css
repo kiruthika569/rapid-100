@@ -1,0 +1,65 @@
+.action-card {
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.action-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.action-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.action-title {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.action-subtitle {
+  font-size: 11px;
+  color: #94a3b8;
+  margin: 2px 0 0 0;
+}
+
+/* Color Variations for Exact Design Matching */
+.action-card.rose {
+  border-left: 4px solid #f43f5e;
+  background: rgba(244, 63, 94, 0.05);
+}
+.action-card.rose .action-title { color: #f43f5e; }
+.action-card.rose .action-indicator { background: #f43f5e; box-shadow: 0 0 8px #f43f5e; }
+
+.action-card.yellow {
+  border-left: 4px solid #eab308;
+  background: rgba(234, 179, 8, 0.05);
+}
+.action-card.yellow .action-title { color: #eab308; }
+.action-card.yellow .action-indicator { background: #eab308; box-shadow: 0 0 8px #eab308; }
+
+.action-card.blue {
+  border-left: 4px solid #3b82f6;
+  background: rgba(59, 130, 246, 0.05);
+}
+.action-card.blue .action-title { color: #3b82f6; }
+.action-card.blue .action-indicator { background: #3b82f6; box-shadow: 0 0 8px #3b82f6; }
+
+/* Animation for the indicator */
+@keyframes pulse {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
